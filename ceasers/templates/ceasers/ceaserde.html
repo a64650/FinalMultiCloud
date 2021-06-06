@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="margin-left: 40%">Ceaser Cipher:</h1>
+{% if flag == 1 %}
+    <div style="margin-left: 40%">
+        <form method="post" action="{% url 'ceaserdec' %}">
+            {% csrf_token %}
+            <div style="margin-bottom: 2%">
+                <label for="String">Message</label>
+                <input value="{{ String }}" required placeholder="Please Insert String" name="String" type="text" minlength="2"
+                       maxlength="255">
+            </div>
+
+            <br>
+            <label for="key">key</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input style="margin-left: 1px" type="number" required name="key" value="{{ key }}" placeholder="key">
+            <button type="submit">Decrypt</button>
+        </form>
+        <h2>Decrypted Message: <input style="background: white; border: solid; border-width: thin" disabled value="{{ Encrypt }}"></h2>
+
+    </div>
+{% else %}
+    <form method="post" action="{% url 'ceaserdec' %}">
+        {% csrf_token %}
+        <input style="margin-left: 40%; margin-top: 5%" value="{{ String }}" placeholder="Please Insert String"
+               name="String" required type="text" minlength="2" maxlength="255">
+        <input type="number" required name="key" value="{{ key }}" style="margin-left: 40%; margin-top: 2%" placeholder="key">
+        <button type="submit">Decrypt</button>
+
+    </form>
+{% endif %}
+
+<a style="margin-left: 40%" href="{% url 'options' %}">Return to Options</a>
+
+</body>
+</html>
