@@ -29,7 +29,6 @@ phonenumberslite==8.12.21
 pypiwin32==223
 python-dateutil==2.8.1
 pytz==2021.1
-pywin32==301
 PyYAML==5.3.1
 requests==2.25.1
 self==2020.12.3
