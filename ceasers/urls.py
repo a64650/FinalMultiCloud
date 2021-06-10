@@ -3,6 +3,6 @@ from ceasers import views
 
 urlpatterns = [
     path('', views.options, name="options"),
-    path('/encrypt', views.encrypt, name="ceaseren"),
-    path('/decrypt', views.decrypt, name="ceaserdec")
+    path('options/encrypt', views.encrypt, name="ceaseren"),
+    path('options/decrypt', views.decrypt, name="ceaserdec")
 ]
